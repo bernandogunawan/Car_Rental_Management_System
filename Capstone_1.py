@@ -13,7 +13,7 @@ What would you like to do:
 4. Remove a car from car rental list
 5. Look at car rental list
 6. Modify a car's data in car rental list
-7. Reduce day
+7. Update day
 0. Exit the program
 """
 
