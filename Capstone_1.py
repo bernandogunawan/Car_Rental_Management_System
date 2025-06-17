@@ -16,6 +16,7 @@ What would you like to do:
 7. Reduce day
 0. Exit the program
 """
+
 rent_menu_message = """
 === Renting a car ===
 
@@ -69,6 +70,7 @@ what would you like to do
 1. Update a specific car
 0. Back to main menu
 """
+
 read_filter_message = """
 === Filtering ===
 
@@ -88,7 +90,6 @@ What would you like to do?
 9. Reset filter
 0. Back to delete menu
 """
-message_error = "Sorry, that input doesn't seem valid\n"
 fuel_type_message = """
 Input the index of your car fuel type 
 1. Gasoline 
@@ -109,7 +110,7 @@ Insert the index of the column you want to update
 5. Price per day
 """
 column_index_message = """
-Insert the index of the column you want to update
+Insert the index of the column you want to filter
 
 1. License plate
 2. Brand
@@ -119,6 +120,9 @@ Insert the index of the column you want to update
 6. Status
 7. Days left
 """
+
+message_error = "Sorry, that input doesn't seem valid\n"
+
 
 # These variables are used to store the data and help to control the integrity of the data
 db_column_names = ["License plate", "Brand", "Model", "Fuel type", "Price per day", "Status", "Days left"]
@@ -523,8 +527,8 @@ def filtering(table_copy):
         temp_table = filtering_process_str(3,value,table_copy)
 
     elif column_filter == 5:
-        query = keep_asking("How do you want to filter? (Bigger, Smaller, or Equal): ",valid_input=["Bigger","Smaller","Equal"]).capitalize()
         value = int(keep_asking("Please insert the car price:", "Sorry, please insert an integer\n", type = int))
+        query = keep_asking("How do you want to filter? (Bigger, Smaller, or Equal): ",valid_input=["Bigger","Smaller","Equal"]).capitalize()
         temp_table = filtering_process_int(4,value,query,table_copy)
 
     elif column_filter == 6:
@@ -536,8 +540,8 @@ def filtering(table_copy):
         temp_table = filtering_process_str(5,value,table_copy)
 
     elif column_filter == 7:
-        query = keep_asking("How do you want to filter? (Bigger, Smaller, or Equal): ",valid_input=["Bigger","Smaller","Equal"]).capitalize()
         value = int(keep_asking("Please insert the remaining rental days:", "Sorry, please insert an integer\n",type = int))
+        query = keep_asking("How do you want to filter? (Bigger, Smaller, or Equal): ",valid_input=["Bigger","Smaller","Equal"]).capitalize()
         temp_table = filtering_process_int(6,value,query,table_copy)
 
     return temp_table
