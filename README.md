@@ -57,7 +57,7 @@ pip install tabulate
 1. Make sure Python and `tabulate` are installed.
 2. Run the script:
 ```bash
-python Capstone_1.py
+python car_rental_management_system.py
 ```
 3. Follow the on-screen prompts in the terminal.
 
